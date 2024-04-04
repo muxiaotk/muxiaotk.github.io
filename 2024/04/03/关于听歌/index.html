@@ -15,7 +15,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>一点点修车心得 |  夏至</title>
+      <title>关于听歌 |  夏至</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -58,7 +58,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-一点点修车心得"
+  id="post-关于听歌"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -69,7 +69,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  一点点修车心得
+  关于听歌
 </h1>
  
 
@@ -77,11 +77,11 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/02/20/%E4%B8%80%E7%82%B9%E7%82%B9%E4%BF%AE%E8%BD%A6%E5%BF%83%E5%BE%97/" class="article-date">
-  <time datetime="2024-02-20T20:35:00.000Z" itemprop="datePublished">2024-02-21</time>
+      <a href="/2024/04/03/%E5%85%B3%E4%BA%8E%E5%90%AC%E6%AD%8C/" class="article-date">
+  <time datetime="2024-04-03T05:23:00.000Z" itemprop="datePublished">2024-04-03</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8A%A8%E6%89%8B/">动手</a>
+    <a class="article-category-link" href="/categories/soft/">soft</a>
   </div>
   
 <div class="word_count">
@@ -89,7 +89,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">128</span>
+            <span class="post-count">1k</span>
         </span>
     </span>
 
@@ -98,37 +98,88 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">4 min</span>
         </span>
     </span>
 </div>
  
     </div>
       
-    <div class="tocbot"></div>
-
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>本篇是关于变速器前拨调整的一些方法</p>
+  <p>本文只提供下载各大音乐平台歌曲(含vip)下载的路子，具体实现请自行实现</p>
 <span id="more"></span>
-<h2>方法一</h2>
-挡位调至链条挂在牙盘小盘，飞轮第三或四位置，确保此时链条在前拨中心位置
-<h2>方法二</h2>
-<ol>
-     <li>挡位调至链条挂在牙盘小盘，最小飞轮位置</li>
-     <li>松卡箍，上下调节前拨至牙盘大盘处1-3mm</li>
-     <li>旋转前拨使前拨平行于牙盘</li>
-</ol>
-<h2>剩余步骤</h2>
-<ol>
-     <li>拧紧各个紧固件</li>
-     <li>调节两个限位螺丝</li>
-     <li>调节微调旋钮</li>
-</ol> 
+<p>首先单曲歌曲的解析api如下：<br>咪咕：<br><a target="_blank" rel="noopener" href="https://www.hhlqilongzhu.cn/api/dg_mgmusic.php">https://www.hhlqilongzhu.cn/api/dg_mgmusic.php</a><br>网易云<br><a target="_blank" rel="noopener" href="https://www.hhlqilongzhu.cn/api/dg_wyymusic.php">https://www.hhlqilongzhu.cn/api/dg_wyymusic.php</a><br>腾讯：<br><a target="_blank" rel="noopener" href="https://www.hhlqilongzhu.cn/api/dg_qqmusic.php">https://www.hhlqilongzhu.cn/api/dg_qqmusic.php</a><br>酷狗：<br><a target="_blank" rel="noopener" href="https://www.hhlqilongzhu.cn/api/dg_kgmusic.php">https://www.hhlqilongzhu.cn/api/dg_kgmusic.php</a><br>酷我：<br><a target="_blank" rel="noopener" href="https://www.hhlqilongzhu.cn/api/dg_bdmusic.php">https://www.hhlqilongzhu.cn/api/dg_bdmusic.php</a></p>
+<p>其请求格式如下：<br>api地址?gm&#x3D;歌名&amp;n&#x3D;&amp;num&#x3D;&amp;type&#x3D;<br>比如：<br><a target="_blank" rel="noopener" href="https://www.hhlqilongzhu.cn/api/dg_bdmusic.php?gm=%E6%B3%A1%E6%B2%AB&n=&num=">https://www.hhlqilongzhu.cn/api/dg_bdmusic.php?gm=泡沫&amp;n=&amp;num=</a></p>
+<p>上面的四个参数定义如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必填</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>gm</td>
+<td>是</td>
+<td>歌曲名</td>
+</tr>
+<tr>
+<td>n</td>
+<td>否</td>
+<td>选择对应的歌曲,为空返回列表</td>
+</tr>
+<tr>
+<td>num</td>
+<td>否</td>
+<td>返回最大数量,默认30条</td>
+</tr>
+<tr>
+<td>type</td>
+<td>否</td>
+<td>返回格式,默认text,可填json</td>
+</tr>
+</tbody></table>
+<p>正常访问后会得到：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.泡沫☆G.E.M.邓紫棋 2.泡沫☆G.E.M.邓紫棋 3.泡沫☆杨树人 4.泡沫☆小肆 5.泡沫☆多雷 6.试着忘记你☆夏婉安 7.泡沫☆夏婉安 8.泡沫☆小猫多鱼 9.泡沫☆简弘亦 10.泡沫☆夏婉安 11.泡沫☆郑添媛 12.泡沫☆G.E.M.邓紫棋 13.泡沫(2023时光音乐会老友记现场)☆张杰 14.泡沫☆G.E.M.邓紫棋 15.泡沫☆杨树人 16.泡沫 (2015天天向上现场)☆G.E.M.邓紫棋 17.有些人☆夏婉安 18.泡沫☆G.E.M.邓紫棋 19.有些人☆夏婉安 20.泡沫☆郑添媛 21.泡沫(片段)☆阿苒又困了 22.泡沫☆杨树人 23.四季变迁☆夏婉安 24.泡沫(现场版)☆金志文 25.泡沫☆来一碗老于 26.泡沫 (32秒片段)☆郑添媛 27.负我不负他☆泡沫 28.各自为难☆夏婉安 29.泡沫☆张杰 30.泡沫☆夏婉安</span><br></pre></td></tr></table></figure>
+<p>此时可以根据返回的数据选择要第几首个，将参数n赋值后重新访问api，如：<br><a target="_blank" rel="noopener" href="https://www.hhlqilongzhu.cn/api/dg_bdmusic.php?gm=%E6%B3%A1%E6%B2%AB&n=1&num=">https://www.hhlqilongzhu.cn/api/dg_bdmusic.php?gm=泡沫&amp;n=1&amp;num=</a><br>会得到：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">±img=https://img4.kuwo.cn/star/albumcover/700/24/35/4281428590.jpg± 歌名：泡沫 歌手：歌手﹤G.E.M.邓紫棋﹥ 歌曲详情页：https://kuwo.cn/play_detail/1245657 播放链接：http://lw.sycdn.kuwo.cn/330af18bcbb2d757b27c330a69c37fa4/660e3e79/resource/30106/trackmedia/F000004BrIpr2StDtD.flac</span><br></pre></td></tr></table></figure>
+<p>接着讨论歌单下载<br>随便找个歌单解析的api，如<br><a target="_blank" rel="noopener" href="https://api2.52jan.com/music/songlist?server=wyy&id=9634089686">https://api2.52jan.com/music/songlist?server=wyy&amp;id=9634089686</a></p>
+<p>其中请求地址是<a target="_blank" rel="noopener" href="https://api2.52jan.com/music/songlist">https://api2.52jan.com/music/songlist</a><br>server和id的参数定义如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必填</th>
+<th>参数说明</th>
+<th>参数值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>server</td>
+<td>是</td>
+<td>哪家的平台</td>
+<td>酷狗&#x3D;kugou,网易云&#x3D;wyy,QQ音乐&#x3D;qqmusic</td>
+</tr>
+<tr>
+<td>id</td>
+<td>是</td>
+<td>歌单id</td>
+<td>平台歌单id</td>
+</tr>
+</tbody></table>
+<p>实例如下：<br>酷狗音乐示例：<a target="_blank" rel="noopener" href="https://api2.52jan.com/music/songlist?server=kugou&id=6222311">https://api2.52jan.com/music/songlist?server=kugou&amp;id=6222311</a><br>网易云音乐示例：<a target="_blank" rel="noopener" href="https://api2.52jan.com/music/songlist?server=wyy&id=7480897649">https://api2.52jan.com/music/songlist?server=wyy&amp;id=7480897649</a><br>QQ音乐示例：<a target="_blank" rel="noopener" href="https://api2.52jan.com/music/songlist?server=qqmusic&id=8672698451">https://api2.52jan.com/music/songlist?server=qqmusic&amp;id=8672698451</a></p>
+<p>访问后返回json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;author&quot;</span><span class="punctuation">:</span> <span class="string">&quot;岑宁儿&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;lrc&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://api2.52jan.com/wyy/lrc/483671599.lrc&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;pic&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://p1.music.126.net/ZZAQGWl9mR7g5xCyWWH3Pw==/19149094509535913.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;追光者&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://api2.52jan.com/wyy/483671599&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;author&quot;</span><span class="punctuation">:</span> <span class="string">&quot;梁静茹&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;lrc&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://api2.52jan.com/wyy/lrc/254265.lrc&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;pic&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://p1.music.126.net/dr9lwZeuTDjbVTDaz5K0zQ==/18796151278553471.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;宁夏&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://api2.52jan.com/wyy/254265&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;author&quot;</span><span class="punctuation">:</span> <span class="string">&quot;周深&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;lrc&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://api2.52jan.com/wyy/lrc/2124381474.lrc&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;pic&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://p2.music.126.net/ve0l1aPRUBPP7e4x2Oz5DA==/109951169318479430.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;小美满&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://api2.52jan.com/wyy/2124381474&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<p>在返回数据里以追光者为例，可以看出歌曲id是483671599，访问<br><a target="_blank" rel="noopener" href="https://www.hhlqilongzhu.cn/api/dg_wyymusic.php?gm=%E8%BF%BD%E5%85%89%E8%80%85&n=1&num=&type=json">https://www.hhlqilongzhu.cn/api/dg_wyymusic.php?gm=追光者&amp;n=1&amp;num=&amp;type=json</a><br>返回的数据为</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;code&quot;</span><span class="punctuation">:</span> <span class="number">200</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;追光者&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;singer&quot;</span><span class="punctuation">:</span> <span class="string">&quot;岑宁儿&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;母带&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;cover&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://p1.music.126.net/ZZAQGWl9mR7g5xCyWWH3Pw==/19149094509535913.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;link&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://music.163.com/#/song?id=483671599&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;music_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://m801.music.126.net/20240404181508/effe560d6e47a96f9a3678ee0cad2686/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/26289873345/3473/e1ae/e425/cd4aa5842ea0002988c76bcca777747d.flac&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>对比link的值，确定是同一首歌，复制music_url的值到浏览器打开即可下载</p>
+ 
       <!-- reward -->
       
       <div id="reword-out">
@@ -198,12 +249,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://v1xz..com/2024/02/20/%E4%B8%80%E7%82%B9%E7%82%B9%E4%BF%AE%E8%BD%A6%E5%BF%83%E5%BE%97/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://v1xz..com/2024/04/03/%E5%85%B3%E4%BA%8E%E5%90%AC%E6%AD%8C/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BF%AE%E8%BD%A6/" rel="tag">修车</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/" rel="tag">api</a></li></ul>
 
     </footer>
   </div>
@@ -211,19 +262,10 @@
    
   <nav class="article-nav">
     
+    
       <a href="/2024/02/22/%E4%B8%80%E7%82%B9emo/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            一点emo
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2024/02/13/%E5%86%8D%E7%9C%8BEVA/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">再看EVA</div>
+        <div class="article-nav-title">一点emo</div>
       </a>
     
   </nav>
