@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- 背景渐变 -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#467b96;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a6579;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="200" height="200" fill="url(#bg-gradient)" rx="10"/>
+
+  <!-- 音符图标 -->
+  <g transform="translate(100, 100)">
+    <!-- 主音符 -->
+    <path d="M 20,-40 L 20,20 C 20,30 10,35 0,35 C -10,35 -20,30 -20,20 C -20,10 -10,5 0,5 C 10,5 20,10 20,20 L 20,-40 L 50,-35 L 50,30 C 50,40 40,45 30,45 C 20,45 10,40 10,30 C 10,20 20,15 30,15 C 40,15 50,20 50,30 L 50,-35 Z"
+          fill="white" opacity="0.9"/>
+  </g>
+
+  <!-- 文字 -->
+  <text x="100" y="170" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" opacity="0.8">
+    Music
+  </text>
+</svg>

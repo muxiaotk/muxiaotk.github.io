@@ -1,0 +1,443 @@
+/* ============================================================
+ * Icefox for Hexo —— 移植适配补充样式
+ * 仅包含 Typecho 版中不存在、或移植后新增的样式
+ * ============================================================ */
+
+/* ---------- 带侧边栏的页面布局 ---------- */
+.main-with-sidebar {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+}
+
+.main-with-sidebar .content-container {
+    flex: 1;
+    min-width: 0;
+}
+
+.main-with-sidebar .sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    padding: 1.5rem 0;
+}
+
+.sidebar-widget {
+    margin-bottom: 1.5rem;
+    background-color: var(--card-bg, #fff);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-widget .widget-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--primary-background-hover, #eee);
+}
+
+.sidebar-widget .widget-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-widget .widget-content li {
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sidebar-widget .widget-content li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sidebar-widget .widget-content li a:hover {
+    color: var(--link);
+}
+
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-form input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 10px;
+    border: 1px solid var(--primary-background-hover, #ddd);
+    border-radius: 4px;
+    background-color: var(--primary-background);
+    color: var(--text-color);
+}
+
+.search-form button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--link);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ---------- 分页（无 JS 回退） ---------- */
+.page-nav-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+}
+
+.page-nav-link {
+    color: var(--link);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.page-nav-link:hover {
+    text-decoration: underline;
+}
+
+.page-nav-info {
+    color: var(--text-sub-color, #999);
+    font-size: 0.9rem;
+}
+
+/* ---------- 归档时间轴（朋友圈风格） ---------- */
+.moments-year {
+    color: var(--text-color);
+    padding: 0.5rem 0;
+}
+
+.moments-year-num {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-right: 0.15rem;
+}
+
+.moments-empty {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--text-sub-color, #999);
+}
+
+.moments-empty .empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.archive-view {
+    display: none;
+    width: 100%;
+}
+
+.archive-view.active {
+    display: block;
+}
+
+/* ---------- 独立页面 ---------- */
+.page-badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 8px;
+    font-size: 12px;
+    font-weight: normal;
+    border-radius: 10px;
+    background-color: var(--primary-background-hover, #eee);
+    color: var(--text-sub-color, #999);
+}
+
+.page-custom-fields {
+    margin: 0.75rem 0;
+}
+
+.custom-field {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.sub-pages {
+    margin-top: 1.5rem;
+}
+
+.sub-pages h3 {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.sub-pages-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sub-pages-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--primary-background-hover, #eee);
+}
+
+.sub-pages-list a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.page-description {
+    display: block;
+    font-size: 12px;
+    color: var(--text-sub-color, #999);
+}
+
+/* ---------- 第三方评论容器 ---------- */
+.icefox-comment-provider {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.icefox-comment-custom {
+    width: 100%;
+}
+
+/* ---------- 搜索页 ---------- */
+.search-page {
+    padding: 1rem 0;
+}
+
+.search-page-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-page-form input[type="text"] {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid var(--primary-background-hover, #ddd);
+    border-radius: 6px;
+    background-color: var(--primary-background);
+    color: var(--text-color);
+    font-size: 15px;
+}
+
+.search-page-form button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--link);
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.search-result-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--primary-background-hover, #eee);
+}
+
+.search-result-title {
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: var(--link);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.35rem;
+}
+
+.search-result-meta {
+    font-size: 12px;
+    color: var(--text-sub-color, #999);
+    margin-bottom: 0.35rem;
+}
+
+.search-result-desc {
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.search-result-desc em {
+    color: #ff6b6b;
+    font-style: normal;
+}
+
+.search-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-sub-color, #999);
+}
+
+/* ---------- 发布页（静态提示） ---------- */
+.edit-notice {
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+.edit-notice h3 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin: 1rem 0 0.5rem;
+}
+
+.edit-notice p {
+    color: var(--text-sub-color, #999);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.edit-notice code {
+    background-color: var(--primary-background);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 900px) {
+    .main-with-sidebar {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    .main-with-sidebar .sidebar {
+        width: 100%;
+    }
+}
+
+/* ============================================================
+ * Markdown 排版补充
+ * Hexo 的 highlight 生成 <figure class="highlight"><table>… 结构，
+ * 需要额外重置表格样式，否则代码块会带上表格边框、行号错位。
+ * ============================================================ */
+
+.highlight {
+    position: relative;
+    margin: 15px 0;
+    background: var(--primary-background);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.post-detail-content .highlight table,
+.highlight table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    border: none;
+}
+
+.post-detail-content .highlight td,
+.post-detail-content .highlight th,
+.highlight td,
+.highlight th {
+    border: none;
+    padding: 0;
+    background: transparent;
+    text-align: left;
+}
+
+.post-detail-content .highlight tr,
+.highlight tr {
+    border: none;
+}
+
+.highlight pre {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+}
+
+.highlight .gutter {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: top;
+    user-select: none;
+    color: var(--text-sub-color);
+    opacity: 0.55;
+}
+
+.highlight .gutter pre {
+    padding: 12px 8px 12px 14px;
+    text-align: right;
+}
+
+.highlight .code {
+    width: 99%;
+    vertical-align: top;
+}
+
+.highlight .code pre {
+    padding: 12px 14px;
+}
+
+/* 行内代码（Hexo 未包裹在 .highlight 中的情况） */
+.post-detail-content :not(pre) > code {
+    word-break: break-word;
+}
+
+/* 标题锚点（hexo-renderer-marked 的 headerlink） */
+.post-detail-content .headerlink {
+    opacity: 0;
+    margin-left: 6px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.post-detail-content h1:hover .headerlink,
+.post-detail-content h2:hover .headerlink,
+.post-detail-content h3:hover .headerlink,
+.post-detail-content h4:hover .headerlink,
+.post-detail-content h5:hover .headerlink,
+.post-detail-content h6:hover .headerlink {
+    opacity: 0.6;
+}
+
+/* 嵌套列表 */
+.post-detail-content ul ul,
+.post-detail-content ul ol,
+.post-detail-content ol ul,
+.post-detail-content ol ol {
+    margin: 4px 0;
+}
+
+/* 表格：内容过长时可横向滚动 */
+.post-detail-content table {
+    display: block;
+    overflow-x: auto;
+}
+
+.post-detail-content .highlight table {
+    display: table;
+    overflow: visible;
+}
+
+/* 时间轴预览：改为块级容器以容纳标题 / 代码块等块级元素 */
+.moment-preview {
+    display: block;
+}
+
+.moment-body .moment-preview > *:first-child {
+    margin-top: 0;
+}
+
+.moment-body .moment-preview > *:last-child {
+    margin-bottom: 0;
+}
+
+/* 列表页 / 时间轴内的代码块略微紧凑 */
+.moment-body .highlight pre,
+.post-list .highlight pre {
+    font-size: 12.5px;
+}
+

@@ -1,0 +1,108 @@
+.music-card {
+        margin: 0;
+        padding: 2px 4px;
+    }
+
+    .moments-group {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .moments-group img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .content-container {
+        display: flex;
+        padding: 1.5rem;
+    }
+
+    .moments-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .moments-date {
+        width: 6rem;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        gap: .3rem;
+    }
+
+    .moment-item {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .moment-preview {
+        color: var(--text-color);
+    }
+
+    .moment-avatar {
+        width: 6rem;
+        flex-shrink: 0;
+    }
+
+    .moment-avatar img {
+        width: 6rem;
+        height: 6rem;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .moment-body a {
+        color: var(--text-color);
+        transition: color 0.2s ease;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    .moment-body a:hover {
+        color: var(--link);
+    }
+
+    .moment-body a p {
+        word-break: break-all;
+        margin: 0;
+    }
+
+    .moment-body a br {
+        display: none;
+    }
+
+    .moment-body a img {
+        display: none;
+    }
+
+    .moment-content {
+        width: 100%;
+    }
+
+    .mg-day {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: var(--text-color);
+    }
+
+    date {
+        font-size: .8rem;
+        color: var(--text-sub-color);
+    }
+
+    .moment-body-text {
+        background-color: var(--primary-background);
+        padding: .5rem;
+        border-radius: 4px;
+    }

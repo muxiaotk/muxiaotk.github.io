@@ -1,0 +1,445 @@
+/* 游戏专用样式 */
+    .game-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* 顶部信息和按钮区域 */
+    .game-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 15px 20px;
+        background: var(--card-bg);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .game-stats {
+        display: flex;
+        gap: 20px;
+        flex: 1;
+    }
+
+    .game-stat {
+        text-align: center;
+    }
+
+    .game-stat-label {
+        font-size: 12px;
+        color: var(--text-sub-color);
+        margin-bottom: 5px;
+    }
+
+    .game-stat-value {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--link);
+    }
+
+    .leaderboard-btn {
+        padding: 8px 16px;
+        background: var(--link);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+    }
+
+    .leaderboard-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+    }
+
+    /* 游戏画布区域 */
+    .game-canvas-wrapper {
+        position: relative;
+        width: 100%;
+        background: #333;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .game-canvas {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        background: linear-gradient(to bottom, #2c3e50 0%, #34495e 100%);
+        overflow: hidden;
+    }
+
+    /* 道路 */
+    .road {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 0 10%;
+    }
+
+    .lane {
+        flex: 1;
+        position: relative;
+        border-left: 2px dashed rgba(255, 255, 255, 0.3);
+    }
+
+    .lane:last-child {
+        border-right: 2px dashed rgba(255, 255, 255, 0.3);
+    }
+
+    /* 车辆 */
+    .vehicle {
+        position: absolute;
+        font-size: 32px;
+        transition: left 0.2s ease;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .player {
+        bottom: 50px;
+        filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
+    }
+
+    .obstacle {
+        animation: moveDown linear;
+    }
+
+    @keyframes moveDown {
+        from {
+            top: -50px;
+        }
+        to {
+            top: 550px;
+        }
+    }
+
+    /* 控制区域 */
+    .game-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .control-btn {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+        background: var(--link);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(87, 107, 149, 0.3);
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+    }
+
+    .control-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(87, 107, 149, 0.4);
+    }
+
+    .control-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(87, 107, 149, 0.3);
+    }
+
+    .control-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    /* 开始按钮 */
+    .start-btn {
+        width: 120px;
+        height: 80px;
+        font-size: 18px;
+        font-weight: bold;
+        background: #07C160;
+        color: white;
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(7, 193, 96, 0.3);
+        transition: all 0.2s ease;
+    }
+
+    .start-btn:hover {
+        background: #06a950;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(7, 193, 96, 0.4);
+    }
+
+    .start-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    /* 游戏结束弹窗 */
+    .game-over-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .game-over-modal.show {
+        display: flex;
+    }
+
+    .game-over-content {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+    }
+
+    .game-over-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: var(--text-color);
+        margin-bottom: 20px;
+    }
+
+    .game-over-stats {
+        margin-bottom: 20px;
+    }
+
+    .game-over-stat {
+        font-size: 18px;
+        color: var(--text-sub-color);
+        margin: 10px 0;
+    }
+
+    .game-over-stat strong {
+        color: var(--link);
+        font-size: 24px;
+    }
+
+    .game-over-form {
+        margin-top: 20px;
+    }
+
+    .game-over-tip {
+        margin-top: 20px;
+        padding: 20px;
+        background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%);
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .game-over-tip p {
+        margin: 8px 0;
+        color: #856404;
+        font-size: 16px;
+    }
+
+    .game-over-tip strong {
+        color: #07C160;
+        font-size: 18px;
+    }
+
+    .game-over-actions {
+        margin-top: 20px;
+    }
+
+    .game-over-input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+        background: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    .game-over-btn {
+        width: 48%;
+        padding: 12px;
+        margin: 10px 1%;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .submit-score-btn {
+        background: #07C160;
+        color: white;
+    }
+
+    .submit-score-btn:hover {
+        background: #06a950;
+    }
+
+    .restart-btn {
+        background: var(--link);
+        color: white;
+    }
+
+    .restart-btn:hover {
+        opacity: 0.9;
+    }
+
+    /* 排行榜弹窗 */
+    .leaderboard-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .leaderboard-modal.show {
+        display: flex;
+    }
+
+    .leaderboard-content {
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 500px;
+        width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .leaderboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .leaderboard-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--text-color);
+    }
+
+    .close-modal-btn {
+        background: none;
+        border: none;
+        font-size: 32px;
+        color: var(--text-sub-color);
+        cursor: pointer;
+        line-height: 1;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+    }
+
+    .close-modal-btn:hover {
+        color: var(--text-color);
+    }
+
+    .leaderboard-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .leaderboard-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        margin: 8px 0;
+        background: var(--bg-color);
+        border-radius: 5px;
+    }
+
+    .leaderboard-rank {
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--link);
+        width: 40px;
+    }
+
+    .leaderboard-name {
+        flex: 1;
+        font-size: 16px;
+        color: var(--text-color);
+    }
+
+    .leaderboard-score {
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--text-sub-color);
+    }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+        .game-canvas {
+            height: 400px;
+        }
+
+        .control-btn {
+            width: 70px;
+            height: 70px;
+            font-size: 28px;
+        }
+
+        .start-btn {
+            width: 100px;
+            height: 70px;
+            font-size: 16px;
+        }
+
+        .game-header {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .game-stats {
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        .leaderboard-btn {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .game-stat-value {
+            font-size: 20px;
+        }
+
+        .game-stat-label {
+            font-size: 11px;
+        }
+    }
