@@ -278,6 +278,15 @@
 
             <!-- 标签列表 -->
             
+            <div class="setting-section">
+                <div class="setting-section-title">🏷️ 热门标签</div>
+                <div class="setting-tags">
+                    
+                        <a class="tag" href="/tags/%E5%8A%A8%E6%89%8B/">动手</a>
+                    
+                </div>
+            </div>
+            
 
             <!-- 主题切换 -->
             <div class="setting-section">
@@ -426,6 +435,96 @@
 </main>
 
 <script src="/js/search.js"></script>
+
+
+<!-- 顶部网易云音乐播放器（未启用时不输出） -->
+
+
+<div class="dynamic-island hidden" id="musicIsland">
+    <!-- 收起态 -->
+    <div class="di-collapsed">
+        <div class="di-collapsed-left">
+            <img class="di-cover" id="musicIslandCoverMini" src="" alt="cover" title="展开播放器"
+                 draggable="false">
+            <button type="button" class="di-icon-btn di-collapsed-play" id="musicIslandMiniToggle" title="播放">
+                <span class="di-icon di-play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+    <path d="M8 17.175V6.825q0-.425.3-.713t.7-.287q.125 0 .263.037t.262.113l8.15 5.175q.225.15.338.375t.112.475-.112.475-.338.375l-8.15 5.175q-.125.075-.262.113T9 18.175q-.4 0-.7-.288t-.3-.712"/>
+</svg>
+</span>
+                <span class="di-icon di-pause"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+    <path d="M6 19h4V5H6zm8-14v14h4V5z"/>
+</svg>
+</span>
+            </button>
+        </div>
+        <div class="di-wave" aria-hidden="true">
+            <i></i><i></i><i></i><i></i>
+        </div>
+    </div>
+
+    <!-- 展开态 -->
+    <div class="di-panel">
+        <div class="di-head">
+            <img class="di-cover" id="musicIslandCover" src="" alt="cover" title="收起播放器" draggable="false">
+            <div class="di-meta">
+                <div class="di-title" id="musicIslandTitle">未播放</div>
+                <div class="di-artist" id="musicIslandArtist"></div>
+            </div>
+            <div class="di-wave" aria-hidden="true">
+                <i></i><i></i><i></i><i></i>
+            </div>
+        </div>
+        <div class="di-progress">
+            <span class="di-time" id="musicIslandElapsed">0:00</span>
+            <div class="di-track" id="musicIslandTrack">
+                <div class="di-fill" id="musicIslandFill"></div>
+            </div>
+            <span class="di-time di-remain" id="musicIslandRemain">-0:00</span>
+        </div>
+        <div class="di-controls">
+            <button type="button" class="di-icon-btn" id="musicIslandPrev" title="上一首">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+    <path d="M7 6h2v12H7zm3.5 6l8.5 6V6z"/>
+</svg>
+
+            </button>
+            <button type="button" class="di-icon-btn di-control-play" id="musicIslandPlay" title="播放">
+                <span class="di-icon di-play"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+    <path d="M8 17.175V6.825q0-.425.3-.713t.7-.287q.125 0 .263.037t.262.113l8.15 5.175q.225.15.338.375t.112.475-.112.475-.338.375l-8.15 5.175q-.125.075-.262.113T9 18.175q-.4 0-.7-.288t-.3-.712"/>
+</svg>
+</span>
+                <span class="di-icon di-pause"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+    <path d="M6 19h4V5H6zm8-14v14h4V5z"/>
+</svg>
+</span>
+            </button>
+            <button type="button" class="di-icon-btn" id="musicIslandNext" title="下一首">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+    <path d="M6 18l8.5-6L6 6zm10-12h2v12h-2z"/>
+</svg>
+
+            </button>
+            <button type="button" class="di-icon-btn" id="musicIslandClose" title="关闭播放">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+    <path d="m12 13.4l-2.9 2.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l2.9-2.9l-2.9-2.875q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l2.9 2.9l2.875-2.9q.275-.275.7-.275t.7.275q.3.3.3.713t-.3.687L13.375 12l2.9 2.9q.275.275.275.7t-.275.7q-.3.3-.712.3t-.688-.3z"/>
+</svg>
+
+            </button>
+        </div>
+    </div>
+</div>
+
+<audio id="icefoxBgmAudio" preload="none"></audio>
+
+<!-- 数据源：type=song 时每行一个单曲，type=playlist 时每行一张歌单 -->
+<div class="hidden" id="topMusicList"
+     data-api="https://api.injahow.cn/meting/"
+     data-type="playlist">
+    
+    <div data-id="17950787380" data-server="netease"></div>
+    
+</div>
+
 
 
 <!-- 回到顶部按钮 -->

@@ -10,7 +10,26 @@
   <rights>All rights reserved 2026, poxiao</rights>
   <subtitle>a shoulder to cry on</subtitle>
   <title>夏至</title>
-  <updated>2026-09-25T13:36:08.619Z</updated>
+  <updated>2026-09-25T14:20:24.005Z</updated>
+  <entry>
+    <author>
+      <name>poxiao</name>
+    </author>
+    <category term="动手" scheme="http://example.com/tags/%E5%8A%A8%E6%89%8B/"/>
+    <content>
+      <![CDATA[<p>本篇是关于变速器前拨调整的一些方法</p><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>挡位调至链条挂在牙盘小盘，飞轮第三或四位置，确保此时链条在前拨中心位置</p><h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><ol><li>挡位调至链条挂在牙盘小盘，最小飞轮位置</li><li>松卡箍，上下调节前拨至牙盘大盘处1-3mm</li><li>旋转前拨使前拨平行于牙盘</li></ol><h2 id="剩余步骤"><a href="#剩余步骤" class="headerlink" title="剩余步骤"></a>剩余步骤</h2><ol><li>拧紧各个紧固件</li><li>调节两个限位螺丝</li><li>调节微调旋钮</li></ol>]]>
+    </content>
+    <id>http://example.com/2026/09/25/%E4%B8%80%E7%82%B9%E7%82%B9%E4%BF%AE%E8%BD%A6%E5%BF%83%E5%BE%97/</id>
+    <link href="http://example.com/2026/09/25/%E4%B8%80%E7%82%B9%E7%82%B9%E4%BF%AE%E8%BD%A6%E5%BF%83%E5%BE%97/"/>
+    <published>2026-09-25T14:14:00.000Z</published>
+    <summary>
+      <![CDATA[<p>本篇是关于变速器前拨调整的一些方法</p>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>挡位调至链条挂在牙盘小盘，飞轮第三或四位置，确保此时链条在前拨中心位置</p>
+<]]>
+    </summary>
+    <title>一点点修车心得</title>
+    <updated>2026-09-25T14:20:24.005Z</updated>
+  </entry>
   <entry>
     <author>
       <name>poxiao</name>

@@ -150,7 +150,6 @@ main {
 }
 
 .top-container .tc-user,
-.top-container .tc-music,
 .top-container .tc-edit,
 .top-container .tc-setting {
     height: 40px;
@@ -3481,6 +3480,288 @@ input:checked + .slider:before {
 
 :root.dark .music-card:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ===========================
+   顶部背景音乐播放器
+   =========================== */
+
+/* 灵动岛容器：收起态为胶囊，展开态为大圆角卡片
+   收起态宽度约为页面一半，并保证不压住顶部栏两侧的图标；
+   展开时变宽并增高 */
+.dynamic-island {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 110;
+    box-sizing: border-box;
+    /* 202px ≈ 顶部栏左右两侧图标区（各 95px）+ 少量安全间距 */
+    width: min(348px, calc(100vw - 202px));
+    height: 42px;
+    padding: 5px 12px;
+    overflow: hidden;
+    border-radius: 999px;
+    background-color: rgba(18, 18, 20, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: width 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+        height 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+        padding 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+        border-radius 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dynamic-island.expanded {
+    width: min(348px, calc(100vw - 24px));
+    height: 150px;
+    padding: 12px;
+    border-radius: 26px;
+}
+
+/* 封面：点击展开 / 收起 */
+.dynamic-island .di-cover {
+    display: block;
+    object-fit: cover;
+    background-color: #3a3a3c;
+    cursor: pointer;
+}
+
+/* 收起态：内容分列左右两侧，中间整段留空
+   （留空的中间区域即手机上前置摄像头 / 挖孔屏所在位置） */
+.di-collapsed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.di-collapsed-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.di-collapsed .di-cover {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+}
+
+.di-collapsed-play {
+    flex: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.16);
+}
+
+.di-icon-btn.di-collapsed-play svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* 播放 / 暂停图标切换 */
+.dynamic-island .di-icon.di-pause {
+    display: none;
+}
+
+.dynamic-island.playing .di-icon.di-play {
+    display: none;
+}
+
+.dynamic-island.playing .di-icon.di-pause {
+    display: block;
+}
+
+.di-panel {
+    display: none;
+}
+
+.dynamic-island.expanded .di-collapsed {
+    display: none;
+}
+
+.dynamic-island.expanded .di-panel {
+    display: block;
+    animation: di-panel-in 0.28s ease 0.06s both;
+}
+
+@keyframes di-panel-in {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* 展开态：封面 + 歌名歌手 + 音频律动 */
+.di-panel .di-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.di-panel .di-cover {
+    flex: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+}
+
+.di-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.di-title {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.di-artist {
+    margin-top: 2px;
+    font-size: 11px;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.55);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.di-wave {
+    flex: none;
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 14px;
+}
+
+.di-wave i {
+    width: 3px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    animation: di-wave 0.9s ease-in-out infinite;
+    animation-play-state: paused;
+}
+
+.di-wave i:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.di-wave i:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.di-wave i:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+.dynamic-island.playing .di-wave i {
+    animation-play-state: running;
+}
+
+@keyframes di-wave {
+
+    0%,
+    100% {
+        height: 4px;
+    }
+
+    50% {
+        height: 14px;
+    }
+}
+
+/* 展开态：进度 */
+.di-progress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.di-time {
+    flex: none;
+    min-width: 30px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.55);
+    font-variant-numeric: tabular-nums;
+}
+
+.di-remain {
+    text-align: right;
+}
+
+.di-track {
+    flex: 1;
+    height: 5px;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+}
+
+.di-fill {
+    width: 0;
+    height: 100%;
+    border-radius: 999px;
+    background-color: #ffffff;
+    transition: width 0.2s linear;
+}
+
+/* 展开态：控制按钮 */
+.di-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 12px;
+}
+
+.di-icon-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.di-icon-btn:hover {
+    opacity: 0.7;
+}
+
+.di-icon-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.di-control-play svg {
+    width: 28px;
+    height: 28px;
+}
+
+@media screen and (max-width: 480px) {
+    .di-controls {
+        gap: 16px;
+    }
 }
 
 /* 评论作者铭牌 */
