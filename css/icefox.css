@@ -189,10 +189,22 @@ main {
 .header-container {
     position: relative;
     width: 100%;
+    /* 不支持 aspect-ratio 的旧内核兜底 */
     height: 320px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+/* 锁定与背景图一致的 9:5 比例。
+   否则窄屏下容器会被压成「瘦高」（如 393×320 → 1.23），
+   background-size: cover 只能靠放大再左右裁剪来填满，
+   于是手机端（微信内置浏览器等）的构图与桌面端明显不一致 */
+@supports (aspect-ratio: 9 / 5) {
+    .header-container {
+        height: auto;
+        aspect-ratio: 9 / 5;
+    }
 }
 
 .header-container video {

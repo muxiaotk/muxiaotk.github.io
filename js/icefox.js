@@ -57,8 +57,20 @@ function initTopContainerScroll() {
     const $topContainer = $('.top-container');
     if (!$topContainer.length) return;
 
-    const scrollThreshold = 264;
+    // 顶部栏固定高 56px：横幅滚过顶部栏之后再切换底色与图标
+    // 横幅高度随宽度自适应（9:5），所以阈值需要实时计算，不能写死
+    let scrollThreshold = 264;
     let lastScrollState = false;
+
+    function updateThreshold() {
+        const header = document.querySelector('.header-container');
+        if (header) {
+            scrollThreshold = Math.max(0, header.offsetHeight - 56);
+        }
+    }
+
+    updateThreshold();
+    $(window).on('resize', updateThreshold);
 
     function toggleIcons(isScrolled) {
         $('.tc-user, .tc-music, .tc-edit, .tc-setting').each(function () {

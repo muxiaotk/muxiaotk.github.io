@@ -10,12 +10,47 @@
   <rights>All rights reserved 2026, poxiao</rights>
   <subtitle>a shoulder to cry on</subtitle>
   <title>夏至</title>
-  <updated>2026-09-25T14:20:24.005Z</updated>
+  <updated>2026-09-26T03:00:56.578Z</updated>
+  <entry>
+    <author>
+      <name>poxiao</name>
+    </author>
+    <category term="bycle" scheme="http://example.com/tags/bycle/"/>
+    <content>
+      <![CDATA[<p>车架大小选择一般由三个值决定，分别是堆高、跨高、前伸量，应首先测量自身跨高，保证自身跨高高于<strong>车架的跨高2-5cm</strong>，再按<strong>自身跨高*0.67</strong>获得堆高值，至于前伸量，它和堆高的比值 str = 堆高/前伸量 决定了车架及格设计的是否激进，说人话激进的几何设计会让人趴的更低风阻更小，就是骑久了比较费腰，一般是&gt;1.45就很舒适。不过相对跨高和堆高是随车架定死的不同。str值是可以后期调节坐垫位置和车把尺寸来改变整体前伸量，所以……</p><p><img src="https://knsbaxmi.dev.cdn.imgeng.in/usr/uploads/img/bycle.jpeg" alt="车架几何" title="车架几何"></p>]]>
+    </content>
+    <id>http://example.com/2026/09/26/%E5%85%B3%E4%BA%8E%E9%80%89%E8%BD%A6%E4%B9%8B%E8%BD%A6%E6%9E%B6%E5%A4%A7%E5%B0%8F/</id>
+    <link href="http://example.com/2026/09/26/%E5%85%B3%E4%BA%8E%E9%80%89%E8%BD%A6%E4%B9%8B%E8%BD%A6%E6%9E%B6%E5%A4%A7%E5%B0%8F/"/>
+    <published>2026-09-26T02:53:00.000Z</published>
+    <summary>
+      <![CDATA[<p>车架大小选择一般由三个值决定，分别是堆高、跨高、前伸量，应首先测量自身跨高，保证自身跨高高于<strong>车架的跨高2-5cm</strong>，再按<strong>自身跨高*0.67</strong>获得堆高值，至于前伸量，它和堆高的比值 str = 堆高/前伸量 决定]]>
+    </summary>
+    <title>关于选车之车架大小</title>
+    <updated>2026-09-26T03:00:56.578Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>poxiao</name>
+    </author>
+    <category term="video" scheme="http://example.com/tags/video/"/>
+    <content>
+      <![CDATA[<video src="https://knsbaxmi.dev.cdn.imgeng.in/usr/uploads/video/gjc.mp4"></video>]]>
+    </content>
+    <id>http://example.com/2026/09/26/%E6%B5%8B%E8%AF%95%E8%A7%86%E9%A2%91/</id>
+    <link href="http://example.com/2026/09/26/%E6%B5%8B%E8%AF%95%E8%A7%86%E9%A2%91/"/>
+    <published>2026-09-26T00:46:00.000Z</published>
+    <summary>
+      <![CDATA[<video src="https://knsbaxmi.dev.cdn.imgeng.in/usr/uploads/video/gjc.mp4"></video>]]>
+    </summary>
+    <title>测试视频</title>
+    <updated>2026-09-26T00:46:38.260Z</updated>
+  </entry>
   <entry>
     <author>
       <name>poxiao</name>
     </author>
     <category term="动手" scheme="http://example.com/tags/%E5%8A%A8%E6%89%8B/"/>
+    <category term="bycle" scheme="http://example.com/tags/bycle/"/>
     <content>
       <![CDATA[<p>本篇是关于变速器前拨调整的一些方法</p><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>挡位调至链条挂在牙盘小盘，飞轮第三或四位置，确保此时链条在前拨中心位置</p><h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><ol><li>挡位调至链条挂在牙盘小盘，最小飞轮位置</li><li>松卡箍，上下调节前拨至牙盘大盘处1-3mm</li><li>旋转前拨使前拨平行于牙盘</li></ol><h2 id="剩余步骤"><a href="#剩余步骤" class="headerlink" title="剩余步骤"></a>剩余步骤</h2><ol><li>拧紧各个紧固件</li><li>调节两个限位螺丝</li><li>调节微调旋钮</li></ol>]]>
     </content>
@@ -28,22 +63,23 @@
 <]]>
     </summary>
     <title>一点点修车心得</title>
-    <updated>2026-09-25T14:20:24.005Z</updated>
+    <updated>2026-09-26T02:56:16.516Z</updated>
   </entry>
   <entry>
     <author>
       <name>poxiao</name>
     </author>
+    <category term="about me" scheme="http://example.com/categories/about-me/"/>
     <content>
-      <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]>
+      <![CDATA[<p>var oldMan = new Man()<br><br>oldMan.name=’muxiao lee’<br><br>oldMan.age=34<br><br>oldMan.sex=’male’<br><br>oldMan.work=’engineer’<br><br>oldMan.hobbies=[‘run’,’biking’,’tiktok’]</p>]]>
     </content>
     <id>http://example.com/2026/09/25/hello-world/</id>
     <link href="http://example.com/2026/09/25/hello-world/"/>
-    <published>2026-09-25T13:36:08.619Z</published>
+    <published>2026-09-25T13:36:00.000Z</published>
     <summary>
-      <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for]]>
+      <![CDATA[<p>var oldMan = new Man()<br><br>oldMan.name=’muxiao lee’<br><br>oldMan.age=34<br><br>oldMan.sex=’male’<br><br>oldMan.work=’engineer’<br><br]]>
     </summary>
-    <title>Hello World</title>
-    <updated>2026-09-25T13:36:08.619Z</updated>
+    <title>关于我</title>
+    <updated>2026-09-26T02:50:25.614Z</updated>
   </entry>
 </feed>
